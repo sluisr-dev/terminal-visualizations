@@ -1,25 +1,25 @@
 # Terminal Visualizations
 
-Simulaciones gráficas avanzadas renderizadas directamente en terminal usando caracteres ASCII y escape codes.
+Advanced graphics simulations rendered directly in the terminal using ASCII characters and escape codes.
 
-> **Zero dependencies for core simulations** — solo Python estándar + numpy. La versión web usa Three.js.
+> **Zero dependencies for core simulations** — just standard Python + numpy. Web version uses Three.js.
 
 ---
 
-## 🌌 Agujero Negro (`agujero_negro.py`)
+## 🌌 Black Hole (`agujero_negro.py`)
 
-Simulación 3D en tiempo real de un agujero negro con disco de acreción.
+Real-time 3D simulation of a black hole with accretion disk.
 
 **Features:**
-- **Disco de acreción** con brazos espirales animados
-- **Lente gravitacional** — distorsión de estrellas cercanas al horizonte de eventos
-- **Efecto Doppler** — gradiente de temperatura (azul → amarillo → rojo)
-- **Rotación orbital** con perspectiva 3D controlable
-- **Z-buffer** para oclusión correcta (parte trasera del disco oculta)
+- **Accretion disk** with animated spiral arms
+- **Gravitational lensing** — distortion of stars near the event horizon
+- **Doppler effect** — temperature gradient (blue → yellow → red)
+- **Orbital rotation** with controllable 3D perspective
+- **Z-buffer** for correct occlusion (back of disk hidden)
 
-**Controles:**
-- `↑↓←→` — Rotar cámara
-- `Q` — Salir
+**Controls:**
+- `↑↓←→` — Rotate camera
+- `Q` — Exit
 
 ```bash
 python agujero_negro.py
@@ -29,38 +29,38 @@ https://github.com/user-attachments/assets/blackhole-demo.mp4
 
 ---
 
-## 🎤 Visualizador de Audio (`visualizador.py`)
+## 🎤 Audio Visualizer (`visualizador.py`)
 
-Visualizador de forma de onda en tiempo real con calibración automática.
+Real-time waveform visualizer with automatic calibration.
 
 **Features:**
-- **Calibración automática** de umbral de ruido y rango de voz
-- **Noise gate** — silencia cuando no hay audio
-- **Suavizado físico** — inercia en las barras para movimiento orgánico
-- **Gradiente de color** — blanco (centro) → cyan → azul (exterior)
+- **Automatic calibration** of noise threshold and voice range
+- **Noise gate** — silences when there's no audio
+- **Physical smoothing** — inertia in bars for organic movement
+- **Color gradient** — white (center) → cyan → blue (outer)
 
-**Requisitos:**
+**Requirements:**
 ```bash
 pip install sounddevice numpy
 ```
 
-**Uso:**
+**Usage:**
 ```bash
 python visualizador.py
 ```
 
 ---
 
-## 🪐 Sistema Solar Web (`sistema-solar-web/`)
+## 🪐 Solar System Web (`sistema-solar-web/`)
 
-Simulación 3D interactiva del sistema solar usando Three.js.
+Interactive 3D solar system simulation using Three.js.
 
 **Features:**
-- Órbitas proporcionales con velocidades reales escaladas
-- Texturas planetarias (sol, mercurio, venus, tierra, marte, júpiter, saturno)
-- **Post-processing bloom** para el sol
-- Labels orbitales que siguen planetas en 3D
-- Controles de órbita (zoom, rotar, pan)
+- Proportional orbits with scaled real velocities
+- Planetary textures (sun, mercury, venus, earth, mars, jupiter, saturn)
+- **Post-processing bloom** for the sun
+- Orbital labels that follow planets in 3D
+- Orbit controls (zoom, rotate, pan)
 
 ```bash
 cd sistema-solar-web
@@ -72,27 +72,27 @@ npm run dev
 
 ## Tech Stack
 
-| Componente | Tecnología |
-|------------|------------|
+| Component | Technology |
+|-----------|------------|
 | Terminal rendering | Python `curses` + escape codes |
-| Matemáticas 3D | Numpy (proyección perspectiva manual) |
+| 3D Math | Numpy (manual perspective projection) |
 | Audio | `sounddevice` (portaudio bindings) |
 | Web 3D | Three.js + Vite |
 
 ---
 
-## Por qué esto existe
+## Why This Exists
 
-Demostración de que la "computación gráfica" no requiere GPUs ni motores complejos. Con:
-- Proyección perspectiva manual (matrices 4×4 no requeridas)
-- Z-buffer en software
-- Física de partículas simplificada
-- Señales de audio procesadas en bloques
+A demonstration that "computer graphics" doesn't require GPUs or complex engines. With:
+- Manual perspective projection (no 4×4 matrices required)
+- Software Z-buffer
+- Simplified particle physics
+- Block-processed audio signals
 
-Todo renderizado a **30 FPS en una terminal**.
+All rendered at **30 FPS in a terminal**.
 
 ---
 
-## Licencia
+## License
 
-MIT — Usa, modifica, rompe.
+MIT — Use, modify, break.
